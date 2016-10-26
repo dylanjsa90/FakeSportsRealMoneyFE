@@ -7,6 +7,8 @@ const angular = require('angular');
 let sportsApp = angular.module('sportsApp', [require('angular-route'), require('angular-jwt')]);
 
 require('./services')(sportsApp);
+require('./controllers')(sportsApp);
+require('./components')(sportsApp);
 
 sportsApp.run(['$rootScope', ($rs) => {
   $rs.baseUrl = `${__API_URL__}`,
