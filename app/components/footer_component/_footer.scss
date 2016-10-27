@@ -1,0 +1,9 @@
+footer {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  background-color: $app-footer;
+}
