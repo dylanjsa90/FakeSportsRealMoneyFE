@@ -1,0 +1,15 @@
+<form data-ng-submit="$ctrl.createLeague()">
+  <h3>Start by setting up your fantasy league or adding another</h3>
+  <input type="text" placeholder="League Name" data-ng-model="$ctrl.league.name">
+  <label for="dues">League Membership Dues: $<input name="dues" type="number" placeholder="50.00" min="0" max="10000" step="any" 
+  required data-ng-model="$ctrl.league.dues"></label>
+  <select name="sport" required data-ng-model="$ctrl.league.sport">
+    <option value="Football" selected>Football</option>
+    <option value="Baseball">Baseball</option>
+    <option value="Basketball">Basketball</option>
+    <option value="Soccer">Soccer</option>
+  </select>
+  <label for="startDate">League Start Date</label>
+  <input name="startDate" type="date" data-ng-model="$ctrl.league.startDate">
+  <button type="submit" class="btn btn-default">Create League</button>
+</form>

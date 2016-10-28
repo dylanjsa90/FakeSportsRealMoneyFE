@@ -3,7 +3,7 @@
 module.exports = (app) => {
   app.factory('MemberService', ['$q', '$http', function($q, $http) {
     let service = {};
-        let config = {
+    let config = {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -26,6 +26,16 @@ module.exports = (app) => {
           resolve(res.data);
         }).catch(err => reject(err));
       });
+    };
+
+    service.removeMember = function(member) {
+      let url = `${API_URL}/league/${member.league}/user/${member._id}`;
+      return $q((resolve, reject) => {
+        $http.delete(url, config)
+          .then(res => {
+            resolve(res.data)
+          }).catch(err => reject(err));
+      });  
     };
 
 
