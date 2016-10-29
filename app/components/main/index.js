@@ -1,9 +1,10 @@
 'use strict';
 
 module.exports = (app) => {
-  app.controller('MainController', function() {
-    
-  });
+  app.controller('MainController', ['LeagueService', function(LeagueService) {
+    this.leagues = LeagueService.fetchLeagues();
+  
+  }]);
 
 
   app.component('dsMain', {

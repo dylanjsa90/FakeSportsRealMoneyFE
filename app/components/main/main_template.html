@@ -1,3 +1,9 @@
 <div class="main-container">
   <nav-bar></nav-bar>
+  <div class="leagues-container">
+    <league-form></league-form>
+    <ul>
+      <li class="league-li" data-ng-repeat="item in $ctrl.leagues" league="item">item.name</li>
+    </ul>
+  </div>
 </div>

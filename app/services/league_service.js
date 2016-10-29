@@ -4,6 +4,13 @@ module.exports = (app) => {
   app.factory('LeagueService', ['$q', '$http', 'Auth', function ($q, $http, Auth) {
     let service = {};
     let url = `${API_URL}/api`;
+    let config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    };
+
     service.fetchLeagues = function () {
       let user = Auth.getUser();
       return $q((resolve, reject) => {
@@ -33,7 +40,8 @@ module.exports = (app) => {
       });
     };
 
-    service.createLeague = function (data, config) {
+    service.createLeague = function (data) {
+      data.commissioner = Auth.getUser();
       return $q((resolve, reject) => {
         $http.post(`${url}/league/`, data, config)
           .then(res => {
@@ -44,9 +52,7 @@ module.exports = (app) => {
             reject(err);
           });
       });
-    };
-
-    
+    };    
 
     return service;
   }]);
