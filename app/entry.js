@@ -28,9 +28,6 @@ sportsApp.config(['$routeProvider', ($rp) => {
   .when('/signin', {
     template: require('./html/signin.html')
   })
-  .when('/registerLeague', {
-    template: require('./html/register_league.html')
-  })
   .when('/home', {
     template: require('./html/home.html'),
     controller: 'AuthController',

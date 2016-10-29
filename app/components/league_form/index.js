@@ -9,7 +9,7 @@ module.exports = (app) => {
     };
   }]);
   app.component('league-form', {
-    template: require('league_form_template.html'),
+    template: require('./league_form_template.html'),
     controller: 'LeagueFormController',
   });
 };

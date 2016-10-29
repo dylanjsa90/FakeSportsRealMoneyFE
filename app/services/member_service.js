@@ -11,7 +11,7 @@ module.exports = (app) => {
     };
     
     service.addMember = function(data) {
-      let url = `${API_URL}/league/${data.league}/user`;
+      let url = `${__API_URL__}/league/${data.league}/user`;
       return $q((resolve, reject) => {
         $http.post(url, data, config).then(res => {
           resolve(res.data);
@@ -20,7 +20,7 @@ module.exports = (app) => {
     };
 
     service.updateMember = function(data) {
-      let url = `${API_URL}/league/${data.league}/user/${data._id}`;
+      let url = `${__API_URL__}/league/${data.league}/user/${data._id}`;
       return $q((resolve, reject) => {
         $http.put(url, data, config).then(res => {
           resolve(res.data);
@@ -29,11 +29,11 @@ module.exports = (app) => {
     };
 
     service.removeMember = function(member) {
-      let url = `${API_URL}/league/${member.league}/user/${member._id}`;
+      let url = `${__API_URL__}/league/${member.league}/user/${member._id}`;
       return $q((resolve, reject) => {
         $http.delete(url, config)
           .then(res => {
-            resolve(res.data)
+            resolve(res.data);
           }).catch(err => reject(err));
       });  
     };

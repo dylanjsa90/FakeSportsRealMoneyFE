@@ -19,7 +19,7 @@ module.exports = function(app) {
       },
 
       getUser: function() {
-        let token = this.getToken({noRedirect: true});
+        let token = this.getToken();
         if (!token) return false;
         let decoded = jwtHelper.decodeToken(token);
         this.user = decoded.idd;
@@ -33,7 +33,7 @@ module.exports = function(app) {
         $location.path('/signin');
       }
 
-    }
+    };
 
-  }])
-}
+  }]);
+};

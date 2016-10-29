@@ -1,8 +1,5 @@
 'use strict';
 
-require('./_nav.scss');
-require('./_nav_icon.scss');
-
 module.exports = function(app) {
   app.component('navBar', {
     controller: 'NavController',

@@ -9,7 +9,7 @@ const API_URL = JSON.stringify(process.env.API_URL || 'http://localhost:3000');
 let plugins = [
   new ExtractText('bundle.css'),
   new webpack.DefinePlugin({
-    __API_URL: API_URL
+    __API_URL__: API_URL
   })
 ];
 
@@ -35,7 +35,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: '/node_modules',
+        exclude: '/node_modules/',
         query: {
           presets: ['es2015']
         }

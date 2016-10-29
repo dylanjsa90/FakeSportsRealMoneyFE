@@ -3,7 +3,7 @@
 module.exports = (app) => {
   app.factory('LeagueService', ['$q', '$http', 'Auth', function ($q, $http, Auth) {
     let service = {};
-    let url = `${API_URL}/api`;
+    let url = `${__API_URL__}/api`;
     let config = {
       headers: {
         'Content-Type': 'application/json',

@@ -4,6 +4,8 @@
   "description": "This repo is for what will soon be the frontend site for the FakeSportsRealMoney node application",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
