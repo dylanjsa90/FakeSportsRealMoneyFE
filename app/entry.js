@@ -30,8 +30,6 @@ sportsApp.config(['$routeProvider', ($rp) => {
   })
   .when('/home', {
     template: require('./html/home.html'),
-    controller: 'AuthController',
-    access: {allowAnonymous: false}
   })
   .otherwise({
     redirectTo: '/home'

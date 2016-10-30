@@ -3,7 +3,7 @@
 module.exports = function(app) {
   app.factory('Auth', ['$window', 'jwtHelper', '$location', function($window, jwtHelper, $location) {
     return {
-      service: {},
+      user: {},
       getToken: function(options) {
         options = options || {};
         if (this.token) return this.token;
@@ -19,7 +19,7 @@ module.exports = function(app) {
       },
 
       getUser: function() {
-        let token = this.getToken();
+        let token = this.getToken({noRedirect: true});
         if (!token) return false;
         let decoded = jwtHelper.decodeToken(token);
         this.user = decoded.idd;
